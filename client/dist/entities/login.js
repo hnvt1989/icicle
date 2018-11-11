@@ -116,7 +116,7 @@ System.register(['aurelia-orm', 'aurelia-validation', 'aurelia-form'], function 
       }(Entity), (_descriptor = _applyDecoratedDescriptor(_class.prototype, 'email', [_dec, _dec2, _dec3, _dec4, _dec5, _dec6], {
         enumerable: true,
         initializer: function initializer() {
-          return 'test.user@test.com';
+          return 'joe@test.com';
         }
       }), _descriptor2 = _applyDecoratedDescriptor(_class.prototype, 'password', [_dec7, _dec8, _dec9, _dec10, _dec11, _dec12], {
         enumerable: true,

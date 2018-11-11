@@ -1,5 +1,5 @@
 import { LoginEntity } from "../entities/login";
-import UserService from '../services/user';
+import {UserService} from '../services/user';
 import {EventAggregator} from 'aurelia-event-aggregator';
 import Home from './home';
 

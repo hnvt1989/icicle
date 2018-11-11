@@ -28,7 +28,7 @@ System.register(['../web_api/user_api'], function (_export, _context) {
         UserService.prototype.login = function login(email, password) {
           var _this = this;
 
-          return api.authenticateUser(email, password).then(function (user) {
+          return this.api.authenticateUser(email, password).then(function (user) {
             _this._userStore = user;
             _this._currentUserLoggedIn = true;
           });

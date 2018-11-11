@@ -13,7 +13,7 @@ System.register(['../entities/login', '../services/user', 'aurelia-event-aggrega
     setters: [function (_entitiesLogin) {
       LoginEntity = _entitiesLogin.LoginEntity;
     }, function (_servicesUser) {
-      UserService = _servicesUser.default;
+      UserService = _servicesUser.UserService;
     }, function (_aureliaEventAggregator) {
       EventAggregator = _aureliaEventAggregator.EventAggregator;
     }, function (_home) {

@@ -12,7 +12,7 @@ export class UserService {
   }
 
   login(email, password){
-    return api.authenticateUser(email, password).then(user => {
+    return this.api.authenticateUser(email, password).then(user => {
       this._userStore = user;
       this._currentUserLoggedIn = true;
     });

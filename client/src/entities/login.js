@@ -14,7 +14,7 @@ export class LoginEntity extends Entity {
   @placeholder('Enter your login email')
   @position(1)
   @inputType('email')
-  email = 'test.user@test.com';
+  email ='joe@test.com';
 
   // Will use string 'password' as resource name. One-to-one.
   //@association()
