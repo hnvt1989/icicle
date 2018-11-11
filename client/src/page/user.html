@@ -1,0 +1,8 @@
+<template>
+  <h3>${header}</h3>
+  <br />
+  <entity-form entity.bind="user" behavior="vertical" valid.delegate="register()" invalid.delegate="console.log('hello')">
+    <!-- <form-group slot="after" label="Remember me" element="checkbox" value.bind="rememberMe">
+    </form-group> -->
+  </entity-form>
+</template>
