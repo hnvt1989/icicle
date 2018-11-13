@@ -24,6 +24,7 @@ System.config({
     "aurelia-pal-browser": "npm:aurelia-pal-browser@1.0.0",
     "aurelia-polyfills": "npm:aurelia-polyfills@1.1.1",
     "aurelia-router": "npm:aurelia-router@1.0.6",
+    "aurelia-store": "npm:aurelia-store@1.3.1",
     "aurelia-templating-binding": "npm:aurelia-templating-binding@1.0.0",
     "aurelia-templating-resources": "npm:aurelia-templating-resources@1.1.1",
     "aurelia-templating-router": "npm:aurelia-templating-router@1.0.0",
@@ -323,6 +324,13 @@ System.config({
       "aurelia-logging": "npm:aurelia-logging@1.5.0",
       "aurelia-path": "npm:aurelia-path@1.1.1",
       "aurelia-route-recognizer": "npm:aurelia-route-recognizer@1.1.0"
+    },
+    "npm:aurelia-store@1.3.1": {
+      "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.4.1",
+      "aurelia-framework": "npm:aurelia-framework@1.3.0",
+      "aurelia-logging": "npm:aurelia-logging@1.5.0",
+      "aurelia-pal": "npm:aurelia-pal@1.8.0",
+      "rxjs": "npm:rxjs@6.3.3"
     },
     "npm:aurelia-task-queue@1.3.1": {
       "aurelia-pal": "npm:aurelia-pal@1.8.0"
@@ -1971,6 +1979,11 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.1",
       "hash-base": "npm:hash-base@3.0.4",
       "inherits": "npm:inherits@2.0.3"
+    },
+    "npm:rxjs@6.3.3": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.1",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "tslib": "npm:tslib@1.9.3"
     },
     "npm:safe-buffer@5.1.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.1"

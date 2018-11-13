@@ -31,6 +31,7 @@ System.register(['../web_api/user_api'], function (_export, _context) {
           return this.api.authenticateUser(email, password).then(function (user) {
             _this._userStore = user;
             _this._currentUserLoggedIn = true;
+            return user;
           });
         };
 

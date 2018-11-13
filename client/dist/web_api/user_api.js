@@ -137,6 +137,21 @@ System.register([], function (_export, _context) {
           });
         };
 
+        UserWebApi.prototype.getUserProfile = function getUserProfile(id) {
+          var _this5 = this;
+
+          this.isRequesting = true;
+          return new Promise(function (resolve) {
+            setTimeout(function () {
+              var found = contacts.filter(function (x) {
+                return x.id == id;
+              })[0];
+              resolve(JSON.parse(JSON.stringify(found)));
+              _this5.isRequesting = false;
+            }, latency);
+          });
+        };
+
         return UserWebApi;
       }());
 

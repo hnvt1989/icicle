@@ -15,6 +15,7 @@ export class UserService {
     return this.api.authenticateUser(email, password).then(user => {
       this._userStore = user;
       this._currentUserLoggedIn = true;
+      return user;
     });
   }
 

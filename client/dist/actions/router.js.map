@@ -1,0 +1,1 @@
+{"version":3,"sources":["actions/router.js"],"names":["routerPerformedNavigation","state","currentRoute","Object","assign","router"],"mappings":";;;AAAO,WAASA,yBAAT,CAAmCC,KAAnC,EAA0CC,YAA1C,EAAwD;AAC7D,WAAOC,OAAOC,MAAP,CAAc,EAAd,EAAkBH,KAAlB,EAAyB,EAAEI,QAAQ,EAAEH,0BAAF,EAAV,EAAzB,CAAP;AACD;;uCAFeF,yB","file":"router.js","sourceRoot":"/src"}

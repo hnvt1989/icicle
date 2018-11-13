@@ -4,5 +4,6 @@
   <entity-form entity.bind="login" behavior="vertical" valid.delegate="logUserIn()" invalid.delegate="checkCredentials()">
     <form-group slot="after" label="Remember me" element="checkbox" value.bind="rememberMe">
     </form-group>
+    <span if.bind="hasLoginError()"> </span>
   </entity-form>
 </template>

@@ -1,6 +1,7 @@
 import 'bootstrap';
 import * as entities from 'config/entities';
 import { validateTrigger, validationController } from 'aurelia-validation';
+import { initialState } from './state';
 
 const myConfiguration = {
   'aurelia-form': {
@@ -74,6 +75,9 @@ export function configure(aurelia) {
 
   aurelia
     .use.plugin('aurelia-validation');
+
+  aurelia
+    .use.plugin("aurelia-store", { initialState });
 
   aurelia.start().then(() => aurelia.setRoot());
 }

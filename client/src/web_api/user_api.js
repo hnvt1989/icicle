@@ -109,4 +109,15 @@ export class UserWebApi {
       }, latency);
     });
   }
+
+  getUserProfile(id){
+    this.isRequesting = true;
+    return new Promise(resolve => {
+      setTimeout(() => {
+        let found = contacts.filter(x => x.id == id)[0];
+        resolve(JSON.parse(JSON.stringify(found)));
+        this.isRequesting = false;
+      }, latency);
+    });
+  }
 }
