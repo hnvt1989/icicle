@@ -1,7 +1,7 @@
-System.register(["aurelia-store", "./state", "rxjs/operators", "../web_api/user_api", "../actions/user"], function (_export, _context) {
+System.register(["aurelia-store", "rxjs/operators", "../web_api/user_api", "../actions/user"], function (_export, _context) {
   "use strict";
 
-  var connectTo, Store, State, pluck, UserWebApi, loadUserProfile, _dec, _class, _class2, _temp, Home;
+  var connectTo, Store, pluck, UserWebApi, loadUserProfile, _dec, _class, _class2, _temp, Home;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -13,8 +13,6 @@ System.register(["aurelia-store", "./state", "rxjs/operators", "../web_api/user_
     setters: [function (_aureliaStore) {
       connectTo = _aureliaStore.connectTo;
       Store = _aureliaStore.Store;
-    }, function (_state) {
-      State = _state.State;
     }, function (_rxjsOperators) {
       pluck = _rxjsOperators.pluck;
     }, function (_web_apiUser_api) {

@@ -8,11 +8,21 @@ module.exports = api => {
   return {
     "plugins": [
       ['@babel/plugin-proposal-decorators', { legacy: true }],
-      ['@babel/plugin-proposal-class-properties', { loose: true }]
+      ['@babel/plugin-proposal-class-properties', { loose: true }],
+      //["@babel/plugin-transform-runtime"],
+      // ["transform-runtime", {
+      //   "polyfill": false,
+      //   "regenerator": true
+      // }]
     ],
     "presets": [
       [
         "@babel/preset-env", {
+          // "useBuiltIns": {
+          //   polyfill: true,
+          //   regenerator: true,
+          // },
+          "useBuiltIns": "entry",
           "targets": process.env.BABEL_TARGET === 'node' ? {
             "node": process.env.IN_PROTRACTOR ? '6' : 'current'
           } : {

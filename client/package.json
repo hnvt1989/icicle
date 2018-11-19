@@ -107,6 +107,7 @@
     }
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "gulp-nodemon": "^2.4.1",
     "mongoose": "^5.3.11"
   }

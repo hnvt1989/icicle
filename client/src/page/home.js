@@ -1,7 +1,6 @@
 
 import { connectTo } from "aurelia-store";
 import { Store } from 'aurelia-store';
-import { State } from "./state";
 import { pluck } from "rxjs/operators";
 import { UserWebApi } from '../web_api/user_api';
 import {
@@ -17,6 +16,7 @@ export default class Home {
     this.api = api;
     this.store = store;
     //this.header = `Welcome ${user.email}`;
+    //this.store.state.subscribe(state => this.state = state.currentLoggedInUser);
   }
 
   activate(params, routeConfig) {

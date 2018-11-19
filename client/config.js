@@ -1,6 +1,11 @@
 System.config({
   defaultJSExtensions: true,
   transpiler: true,
+  meta: {
+    "jspm_packages/babel-polyfill": {
+      "format": "global"
+    }
+  },
   paths: {
     "*": "dist/*",
     "github:*": "jspm_packages/github/*",
@@ -40,6 +45,7 @@ System.config({
     "jquery": "npm:jquery@2.2.4",
     "mongodb": "npm:mongodb@3.1.9",
     "mongoose": "github:gavinaiken/mongoose-browser@4.5.3",
+    "rxjs": "npm:rxjs@6.3.3",
     "text": "github:systemjs/plugin-text@0.0.8",
     "true": "npm:babel-core@5.8.38",
     "true-runtime": "npm:babel-runtime@5.8.38",

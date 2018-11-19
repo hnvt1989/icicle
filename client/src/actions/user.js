@@ -1,3 +1,4 @@
+//import "@babel/polyfill";
 
 // export async function loadContacts(state, getContactList) {
 //   const contacts = await getContactList();

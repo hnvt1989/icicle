@@ -2,6 +2,10 @@ import 'bootstrap';
 import * as entities from 'config/entities';
 import { validateTrigger, validationController } from 'aurelia-validation';
 import { initialState } from './state';
+// import "@babel/polyfill";
+//import "@babel/polyfill";
+//import "@babel/register";
+//import "../node_modules/@babel/polyfill/dist/polyfill";
 
 const myConfiguration = {
   'aurelia-form': {
