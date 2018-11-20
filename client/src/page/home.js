@@ -15,14 +15,13 @@ export default class Home {
   constructor(api, store) {
     this.api = api;
     this.store = store;
-    //this.header = `Welcome ${user.email}`;
-    //this.store.state.subscribe(state => this.state = state.currentLoggedInUser);
   }
 
   activate(params, routeConfig) {
     this.routeConfig = routeConfig;
-
-    return this.store.dispatch(loadUserProfile, this.api.getUserProfile.bind(this.api), routeConfig);
+    if(this.store.state.currentLoggedInUser){
+      return this.store.dispatch(loadUserProfile, this.store.state.currentLoggedInUser.id, this.api.getUserProfile.bind(this.api), routeConfig);
+    }
     // return this.store.dispatch(loadContactDetails, params.id, this.api.getContactDetails.bind(this.api), routeConfig);
   }
 }

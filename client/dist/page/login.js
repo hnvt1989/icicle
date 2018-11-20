@@ -1,7 +1,7 @@
 System.register(['../entities/login', '../services/user', 'aurelia-event-aggregator', './home', '../web_api/user_api', 'aurelia-store', '../actions/user'], function (_export, _context) {
   "use strict";
 
-  var LoginEntity, UserService, EventAggregator, Home, UserWebApi, Store, authenticateUser, _createClass, _class, _temp, Login;
+  var LoginEntity, UserService, EventAggregator, Home, UserWebApi, Store, authenticateUser, _class, _temp, Login;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -26,50 +26,44 @@ System.register(['../entities/login', '../services/user', 'aurelia-event-aggrega
       authenticateUser = _actionsUser.authenticateUser;
     }],
     execute: function () {
-      _createClass = function () {
-        function defineProperties(target, props) {
-          for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || false;
-            descriptor.configurable = true;
-            if ("value" in descriptor) descriptor.writable = true;
-            Object.defineProperty(target, descriptor.key, descriptor);
-          }
-        }
-
-        return function (Constructor, protoProps, staticProps) {
-          if (protoProps) defineProperties(Constructor.prototype, protoProps);
-          if (staticProps) defineProperties(Constructor, staticProps);
-          return Constructor;
-        };
-      }();
-
       _export('default', Login = (_temp = _class = function () {
         function Login(api, store) {
+          var _this = this;
+
           _classCallCheck(this, Login);
 
           this.rememberMe = false;
           this.header = 'Enter your login credentials';
-
-          this.api = api;
+          this.errorMessage = '';
 
           this.login = new LoginEntity();
 
+          this.api = api;
           this.store = store;
+          this.store.state.subscribe(function (state) {
+            return _this.state = state;
+          });
         }
 
+        Login.prototype.activate = function activate(params, routeConfig) {
+          this.routeConfig = routeConfig;
+        };
+
         Login.prototype.logUserIn = function logUserIn() {
-          return this.store.dispatch(authenticateUser, this.api.authenticateUser.bind(this.api), routeConfig);
+          return this.store.dispatch(authenticateUser, this.login.email, this.login.password, this.api.authenticateUser.bind(this.api), this.routeConfig);
+        };
+
+        Login.prototype.hasLoginError = function hasLoginError() {
+          if (this.state && this.state.loginAttempt && this.state.loginAttempt.status === 'failed') {
+            this.errorMessage = this.state.loginAttempt.message;
+            console.log(this.errorMessage + ' error !');
+            return true;
+          } else {
+            return false;
+          }
         };
 
         Login.prototype.checkCredentials = function checkCredentials() {};
-
-        _createClass(Login, [{
-          key: 'hasLoginError',
-          get: function get() {
-            if (this.state.loginAttempt.status === 'failed') return this.state.loginAttempt.message;
-          }
-        }]);
 
         return Login;
       }(), _class.inject = [UserWebApi, Store], _temp));

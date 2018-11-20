@@ -35,8 +35,9 @@ System.register(["aurelia-store", "rxjs/operators", "../web_api/user_api", "../a
 
         Home.prototype.activate = function activate(params, routeConfig) {
           this.routeConfig = routeConfig;
-
-          return this.store.dispatch(loadUserProfile, this.api.getUserProfile.bind(this.api), routeConfig);
+          if (this.store.state.currentLoggedInUser) {
+            return this.store.dispatch(loadUserProfile, this.store.state.currentLoggedInUser.id, this.api.getUserProfile.bind(this.api), routeConfig);
+          }
         };
 
         return Home;

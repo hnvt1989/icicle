@@ -49,12 +49,12 @@ System.register([], function (_export, _context) {
                   profile = _context2.sent;
 
                   routeConfig.navModel.setTitle(user.firstName);
-
+                  console.log('dispatched loadUserProfile');
                   return _context2.abrupt('return', Object.assign({}, state, {
                     userProfile: profile
                   }));
 
-                case 5:
+                case 6:
                 case 'end':
                   return _context2.stop();
               }
@@ -82,8 +82,11 @@ System.register([], function (_export, _context) {
                 case 2:
                   user = _context3.sent;
 
+
+                  console.log('dispatched authenticateUser');
+
                   if (!(user !== null)) {
-                    _context3.next = 7;
+                    _context3.next = 8;
                     break;
                   }
 
@@ -96,7 +99,7 @@ System.register([], function (_export, _context) {
                     }
                   }));
 
-                case 7:
+                case 8:
                   return _context3.abrupt('return', Object.assign({}, state, {
                     loginAttempt: {
                       status: 'failed',
@@ -104,7 +107,7 @@ System.register([], function (_export, _context) {
                     }
                   }));
 
-                case 8:
+                case 9:
                 case 'end':
                   return _context3.stop();
               }

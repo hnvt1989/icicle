@@ -131,7 +131,7 @@ System.register([], function (_export, _context) {
               var found = contacts.filter(function (x) {
                 return x.email == email && x.password == password;
               })[0];
-              resolve(JSON.parse(JSON.stringify(found)));
+              if (found) resolve(JSON.parse(JSON.stringify(found)));else resolve(null);
               _this4.isRequesting = false;
             }, latency);
           });

@@ -13,7 +13,7 @@
 export async function loadUserProfile(state, id, getUserProfile, routeConfig) {
   const profile = await getUserProfile(id);
   routeConfig.navModel.setTitle(user.firstName);
-
+  console.log('dispatched loadUserProfile');
   return Object.assign({}, state, {
     userProfile: profile
   });
@@ -22,6 +22,7 @@ export async function loadUserProfile(state, id, getUserProfile, routeConfig) {
 export async function authenticateUser(state, email, password, authenticateUser, routeConfig) {
   const user = await authenticateUser(email, password);
 
+  console.log('dispatched authenticateUser');
   if (user !== null) {
     return Object.assign({}, state, {
       currentLoggedInUser: user,

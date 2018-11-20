@@ -3,7 +3,7 @@ client/jspm_packages
 client/bower_components
 client/.idea
 client/.DS_STORE
-client/dist
+client/dist/
 client/build/reports
 client/coverage
 client/test/e2e/dist
