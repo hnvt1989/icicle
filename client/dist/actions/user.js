@@ -93,7 +93,7 @@ System.register([], function (_export, _context) {
                   return _context3.abrupt('return', Object.assign({}, state, {
                     currentLoggedInUser: user,
                     userLoggedin: true,
-                    loginAttempt: {
+                    loginStatus: {
                       status: 'success',
                       message: 'logged in successfully'
                     }
@@ -101,7 +101,7 @@ System.register([], function (_export, _context) {
 
                 case 8:
                   return _context3.abrupt('return', Object.assign({}, state, {
-                    loginAttempt: {
+                    loginStatus: {
                       status: 'failed',
                       message: 'check user name & password'
                     }

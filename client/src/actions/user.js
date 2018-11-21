@@ -27,14 +27,14 @@ export async function authenticateUser(state, email, password, authenticateUser,
     return Object.assign({}, state, {
       currentLoggedInUser: user,
       userLoggedin: true,
-      loginAttempt: {
+      loginStatus: {
         status: 'success',
         message: 'logged in successfully'
       }
     });
   } else {
     return Object.assign({}, state, {
-      loginAttempt: {
+      loginStatus: {
         status: 'failed',
         message: 'check user name & password'
       }

@@ -1,1 +1,1 @@
-{"version":3,"sources":["state.js"],"names":["initialState","router","currentRoute","currentLoggedInUser","userLoggedin","userProfile","loginAttempt"],"mappings":";;;;;;;8BAAaA,Y,GAAe;AAC1BC,gBAAQ;AACNC,wBAAc;AADR,SADkB;AAI1BC,6BAAqB,EAJK;AAK1BC,sBAAc,KALY;AAM1BC,qBAAa,EANa;AAO1BC,sBAAc;AAPY,O","file":"state.js","sourceRoot":"/src"}
+{"version":3,"sources":["state.js"],"names":["initialState","router","currentRoute"],"mappings":";;;;;;;8BAAaA,Y,GAAe;AAC1BC,gBAAQ;AACNC,wBAAc;AADR;AADkB,O","file":"state.js","sourceRoot":"/src"}

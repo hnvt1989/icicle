@@ -5,39 +5,75 @@ import Home from './home';
 import { UserWebApi } from '../web_api/user_api';
 import { Store } from 'aurelia-store';
 import { authenticateUser } from '../actions/user';
+import { bindable } from 'aurelia-framework';
+import { connectTo } from "aurelia-store";
+import { pluck } from "rxjs/operators";
+import { observable } from 'aurelia-framework';
 
+
+// @connectTo((store) => store.state.pipe(pluck("loginStatus")))
+@connectTo({
+  selector: (store) => store.state.pipe(pluck('loginStatus')), // same as above
+  onChanged: 'changeHandler',
+})
 export default class Login {
   static inject = [UserWebApi, Store];
   rememberMe = false;
   header = `Enter your login credentials`;
-  errorMessage = '';
+  hasLoginError = false;
 
-  constructor(api, store) {
-    //this.ea = ea;
-    this.login = new LoginEntity();
-    //this.userService = userService;
-    this.api = api;
-    this.store = store;
-    this.store.state.subscribe(state => this.state = state);
-  }
-
-  activate(params, routeConfig) {
-    this.routeConfig = routeConfig;
-  }
-
-  logUserIn() {
-    return this.store.dispatch(authenticateUser, this.login.email, this.login.password, this.api.authenticateUser.bind(this.api), this.routeConfig);
-  }
-
-  hasLoginError() {
-    if (this.state && this.state.loginAttempt && this.state.loginAttempt.status === 'failed') {
-      this.errorMessage = this.state.loginAttempt.message;
-      console.log(`${this.errorMessage} error !`);
-      return true;
-    } else {
-      return false;
+  changeHandler(newState, oldState) {
+    if (newState) {
+      switch (newState.status.toString()) {
+        case ('failed'):
+          this.hasLoginError = true;
+          break;
+        case ('success'):
+          this.hasLoginError = false;
+          this.redirect();
+          break;
+        default:
+          break;
+      }
     }
   }
+
+  constructor(api, store) {
+    this.login = new LoginEntity();
+    this.api = api;
+    this.store = store;
+    // this.store.state.subscribe(state => this.state = state);
+  }
+
+  redirect() {
+    console.log('Log in Successful !');
+  }
+
+  // activate(params, routeConfig) {
+  //   this.routeConfig = routeConfig;
+  //   //this.hasLoginError();
+  // }
+
+  // created(){
+
+  // }
+
+  // attached(){
+  //   this.log
+  // }
+
+  logUserIn() {
+    this.store.dispatch(authenticateUser, this.login.email, this.login.password, this.api.authenticateUser.bind(this.api), this.routeConfig);
+  }
+
+  // hasLoginError() {
+  //   console.log(this.state.loginAttempt.message);
+  //   if(this.state.loginAttempt.status === 'success'){
+
+  //     this.errorMessage = this.state.loginAttempt.message;
+  //     this.error = true;
+  //   }
+  // }
 
   checkCredentials() {
     //this.previousValue = this.fullName;
@@ -49,4 +85,3 @@ export default class Login {
   //   }
   // }
 }
-

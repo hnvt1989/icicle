@@ -8,11 +8,7 @@ System.register([], function (_export, _context) {
       _export('initialState', initialState = {
         router: {
           currentRoute: '/'
-        },
-        currentLoggedInUser: {},
-        userLoggedin: false,
-        userProfile: {},
-        loginAttempt: {}
+        }
       });
 
       _export('initialState', initialState);
