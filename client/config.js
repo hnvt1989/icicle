@@ -1,18 +1,20 @@
 System.config({
   defaultJSExtensions: true,
   transpiler: true,
-  meta: {
-    "jspm_packages/babel-polyfill": {
-      "format": "global"
-    }
-  },
   paths: {
     "*": "dist/*",
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
+  meta: {
+    "jspm_packages/babel-polyfill": {
+      "format": "global"
+    }
+  },
   map: {
     "aurelia-animator-css": "npm:aurelia-animator-css@1.0.1",
+    "aurelia-api": "npm:aurelia-api@3.2.1",
+    "aurelia-authentication": "npm:aurelia-authentication@3.8.2",
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0",
     "aurelia-config": "npm:aurelia-config@0.2.0-0",
     "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.1",
@@ -20,6 +22,7 @@ System.config({
     "aurelia-form": "npm:aurelia-form@1.3.2-1",
     "aurelia-form-validation": "npm:aurelia-form-validation@1.2.0",
     "aurelia-framework": "npm:aurelia-framework@1.3.0",
+    "aurelia-history": "npm:aurelia-history@1.1.0",
     "aurelia-history-browser": "npm:aurelia-history-browser@1.0.0",
     "aurelia-loader-default": "npm:aurelia-loader-default@1.0.0",
     "aurelia-logging": "npm:aurelia-logging@1.5.0",
@@ -28,10 +31,10 @@ System.config({
     "aurelia-pal": "npm:aurelia-pal@1.8.0",
     "aurelia-pal-browser": "npm:aurelia-pal-browser@1.0.0",
     "aurelia-polyfills": "npm:aurelia-polyfills@1.1.1",
-    "aurelia-router": "npm:aurelia-router@1.0.6",
+    "aurelia-router": "npm:aurelia-router@1.2.1",
     "aurelia-store": "npm:aurelia-store@1.3.1",
     "aurelia-templating-binding": "npm:aurelia-templating-binding@1.0.0",
-    "aurelia-templating-resources": "npm:aurelia-templating-resources@1.1.1",
+    "aurelia-templating-resources": "npm:aurelia-templating-resources@1.7.1",
     "aurelia-templating-router": "npm:aurelia-templating-router@1.0.0",
     "aurelia-validation": "npm:aurelia-validation@1.3.0",
     "aurelia-view-manager": "npm:aurelia-view-manager@0.1.1",
@@ -104,7 +107,7 @@ System.config({
       "stream-browserify": "npm:stream-browserify@1.0.0"
     },
     "github:jspm/nodelibs-string_decoder@0.1.0": {
-      "string_decoder": "npm:string_decoder@0.10.31"
+      "string_decoder": "npm:string_decoder@1.1.1"
     },
     "github:jspm/nodelibs-timers@0.1.0": {
       "timers-browserify": "npm:timers-browserify@1.4.2"
@@ -171,7 +174,7 @@ System.config({
     "npm:array-sort@1.0.0": {
       "default-compare": "npm:default-compare@1.0.0",
       "get-value": "npm:get-value@2.0.6",
-      "kind-of": "npm:kind-of@5.1.0"
+      "kind-of": "npm:kind-of@6.0.2"
     },
     "npm:asn1.js@4.10.1": {
       "bn.js": "npm:bn.js@4.11.8",
@@ -191,7 +194,7 @@ System.config({
       "end-of-stream": "npm:end-of-stream@1.4.1",
       "once": "npm:once@1.4.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "process-nextick-args": "npm:process-nextick-args@1.0.7",
+      "process-nextick-args": "npm:process-nextick-args@2.0.0",
       "stream-exhaust": "npm:stream-exhaust@1.0.2"
     },
     "npm:async-settle@1.0.0": {
@@ -206,18 +209,26 @@ System.config({
       "aurelia-pal": "npm:aurelia-pal@1.8.0",
       "aurelia-templating": "npm:aurelia-templating@1.10.1"
     },
-    "npm:aurelia-api@3.2.0": {
+    "npm:aurelia-api@3.2.1": {
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.4.1",
       "aurelia-fetch-client": "npm:aurelia-fetch-client@1.6.0",
       "aurelia-framework": "npm:aurelia-framework@1.3.0",
       "aurelia-path": "npm:aurelia-path@1.1.1",
       "extend": "npm:extend@3.0.2"
     },
-    "npm:aurelia-binding@1.7.3": {
+    "npm:aurelia-authentication@3.8.2": {
+      "aurelia-api": "npm:aurelia-api@3.2.1",
+      "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.4.1",
+      "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.1",
+      "aurelia-fetch-client": "npm:aurelia-fetch-client@1.6.0",
       "aurelia-logging": "npm:aurelia-logging@1.5.0",
       "aurelia-metadata": "npm:aurelia-metadata@1.0.4",
       "aurelia-pal": "npm:aurelia-pal@1.8.0",
-      "aurelia-task-queue": "npm:aurelia-task-queue@1.3.1"
+      "aurelia-path": "npm:aurelia-path@1.1.1",
+      "aurelia-router": "npm:aurelia-router@1.2.1",
+      "aurelia-templating-resources": "npm:aurelia-templating-resources@1.7.1",
+      "extend": "npm:extend@3.0.2",
+      "jwt-decode": "npm:jwt-decode@2.2.0"
     },
     "npm:aurelia-binding@2.1.6": {
       "aurelia-logging": "npm:aurelia-logging@1.5.0",
@@ -228,17 +239,17 @@ System.config({
     "npm:aurelia-bootstrapper@1.0.0": {
       "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.1",
       "aurelia-framework": "npm:aurelia-framework@1.3.0",
-      "aurelia-history": "npm:aurelia-history@1.0.0",
+      "aurelia-history": "npm:aurelia-history@1.1.0",
       "aurelia-history-browser": "npm:aurelia-history-browser@1.0.0",
       "aurelia-loader-default": "npm:aurelia-loader-default@1.0.0",
       "aurelia-logging-console": "npm:aurelia-logging-console@1.0.0",
       "aurelia-pal": "npm:aurelia-pal@1.8.0",
       "aurelia-pal-browser": "npm:aurelia-pal-browser@1.0.0",
       "aurelia-polyfills": "npm:aurelia-polyfills@1.1.1",
-      "aurelia-router": "npm:aurelia-router@1.0.6",
+      "aurelia-router": "npm:aurelia-router@1.2.1",
       "aurelia-templating": "npm:aurelia-templating@1.10.1",
       "aurelia-templating-binding": "npm:aurelia-templating-binding@1.0.0",
-      "aurelia-templating-resources": "npm:aurelia-templating-resources@1.1.1",
+      "aurelia-templating-resources": "npm:aurelia-templating-resources@1.7.1",
       "aurelia-templating-router": "npm:aurelia-templating-router@1.0.0"
     },
     "npm:aurelia-config@0.2.0-0": {
@@ -284,7 +295,7 @@ System.config({
       "aurelia-templating": "npm:aurelia-templating@1.10.1"
     },
     "npm:aurelia-history-browser@1.0.0": {
-      "aurelia-history": "npm:aurelia-history@1.0.0",
+      "aurelia-history": "npm:aurelia-history@1.1.0",
       "aurelia-pal": "npm:aurelia-pal@1.8.0"
     },
     "npm:aurelia-loader-default@1.0.0": {
@@ -303,8 +314,8 @@ System.config({
       "aurelia-pal": "npm:aurelia-pal@1.8.0"
     },
     "npm:aurelia-orm@7.0.1": {
-      "aurelia-api": "npm:aurelia-api@3.2.0",
-      "aurelia-binding": "npm:aurelia-binding@1.7.3",
+      "aurelia-api": "npm:aurelia-api@3.2.1",
+      "aurelia-binding": "npm:aurelia-binding@2.1.6",
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.4.1",
       "aurelia-logging": "npm:aurelia-logging@1.5.0",
       "aurelia-metadata": "npm:aurelia-metadata@1.0.4",
@@ -320,16 +331,16 @@ System.config({
     "npm:aurelia-polyfills@1.1.1": {
       "aurelia-pal": "npm:aurelia-pal@1.8.0"
     },
-    "npm:aurelia-route-recognizer@1.1.0": {
+    "npm:aurelia-route-recognizer@1.3.1": {
       "aurelia-path": "npm:aurelia-path@1.1.1"
     },
-    "npm:aurelia-router@1.0.6": {
+    "npm:aurelia-router@1.2.1": {
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.4.1",
       "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.1",
-      "aurelia-history": "npm:aurelia-history@1.0.0",
+      "aurelia-history": "npm:aurelia-history@1.1.0",
       "aurelia-logging": "npm:aurelia-logging@1.5.0",
       "aurelia-path": "npm:aurelia-path@1.1.1",
-      "aurelia-route-recognizer": "npm:aurelia-route-recognizer@1.1.0"
+      "aurelia-route-recognizer": "npm:aurelia-route-recognizer@1.3.1"
     },
     "npm:aurelia-store@1.3.1": {
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.4.1",
@@ -342,12 +353,12 @@ System.config({
       "aurelia-pal": "npm:aurelia-pal@1.8.0"
     },
     "npm:aurelia-templating-binding@1.0.0": {
-      "aurelia-binding": "npm:aurelia-binding@1.7.3",
+      "aurelia-binding": "npm:aurelia-binding@2.1.6",
       "aurelia-logging": "npm:aurelia-logging@1.5.0",
       "aurelia-templating": "npm:aurelia-templating@1.10.1"
     },
-    "npm:aurelia-templating-resources@1.1.1": {
-      "aurelia-binding": "npm:aurelia-binding@1.7.3",
+    "npm:aurelia-templating-resources@1.7.1": {
+      "aurelia-binding": "npm:aurelia-binding@2.1.6",
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.4.1",
       "aurelia-loader": "npm:aurelia-loader@1.0.0",
       "aurelia-logging": "npm:aurelia-logging@1.5.0",
@@ -363,7 +374,7 @@ System.config({
       "aurelia-metadata": "npm:aurelia-metadata@1.0.4",
       "aurelia-pal": "npm:aurelia-pal@1.8.0",
       "aurelia-path": "npm:aurelia-path@1.1.1",
-      "aurelia-router": "npm:aurelia-router@1.0.6",
+      "aurelia-router": "npm:aurelia-router@1.2.1",
       "aurelia-templating": "npm:aurelia-templating@1.10.1"
     },
     "npm:aurelia-templating@1.10.1": {
@@ -410,7 +421,7 @@ System.config({
       "cache-base": "npm:cache-base@1.0.1",
       "class-utils": "npm:class-utils@0.3.6",
       "component-emitter": "npm:component-emitter@1.2.1",
-      "define-property": "npm:define-property@1.0.0",
+      "define-property": "npm:define-property@2.0.2",
       "isobject": "npm:isobject@3.0.1",
       "mixin-deep": "npm:mixin-deep@1.3.1",
       "pascalcase": "npm:pascalcase@0.1.1",
@@ -439,7 +450,7 @@ System.config({
     "npm:braces@2.3.2": {
       "arr-flatten": "npm:arr-flatten@1.1.0",
       "array-unique": "npm:array-unique@0.3.2",
-      "extend-shallow": "npm:extend-shallow@2.0.1",
+      "extend-shallow": "npm:extend-shallow@3.0.2",
       "fill-range": "npm:fill-range@4.0.0",
       "isobject": "npm:isobject@3.0.1",
       "process": "github:jspm/nodelibs-process@0.1.2",
@@ -580,7 +591,7 @@ System.config({
     },
     "npm:class-utils@0.3.6": {
       "arr-union": "npm:arr-union@3.1.0",
-      "define-property": "npm:define-property@0.2.5",
+      "define-property": "npm:define-property@2.0.2",
       "isobject": "npm:isobject@3.0.1",
       "static-extend": "npm:static-extend@0.1.2",
       "util": "github:jspm/nodelibs-util@0.1.0"
@@ -589,8 +600,8 @@ System.config({
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
     "npm:cliui@3.2.0": {
-      "string-width": "npm:string-width@1.0.2",
-      "strip-ansi": "npm:strip-ansi@3.0.1",
+      "string-width": "npm:string-width@2.1.1",
+      "strip-ansi": "npm:strip-ansi@4.0.0",
       "wrap-ansi": "npm:wrap-ansi@2.1.0"
     },
     "npm:clone-buffer@1.0.0": {
@@ -723,9 +734,6 @@ System.config({
     "npm:d@1.0.0": {
       "es5-ext": "npm:es5-ext@0.10.46"
     },
-    "npm:debug@2.6.9": {
-      "ms": "npm:ms@2.0.0"
-    },
     "npm:debug@3.2.6": {
       "ms": "npm:ms@2.1.1",
       "process": "github:jspm/nodelibs-process@0.1.2",
@@ -736,19 +744,13 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.1"
     },
     "npm:default-compare@1.0.0": {
-      "kind-of": "npm:kind-of@5.1.0"
+      "kind-of": "npm:kind-of@6.0.2"
     },
     "npm:default-resolution@2.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:define-properties@1.1.3": {
       "object-keys": "npm:object-keys@1.0.12"
-    },
-    "npm:define-property@0.2.5": {
-      "is-descriptor": "npm:is-descriptor@0.1.6"
-    },
-    "npm:define-property@1.0.0": {
-      "is-descriptor": "npm:is-descriptor@1.0.2"
     },
     "npm:define-property@2.0.2": {
       "is-descriptor": "npm:is-descriptor@1.0.2",
@@ -873,9 +875,9 @@ System.config({
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:expand-brackets@2.1.4": {
-      "debug": "npm:debug@2.6.9",
-      "define-property": "npm:define-property@0.2.5",
-      "extend-shallow": "npm:extend-shallow@2.0.1",
+      "debug": "npm:debug@3.2.6",
+      "define-property": "npm:define-property@2.0.2",
+      "extend-shallow": "npm:extend-shallow@3.0.2",
       "posix-character-classes": "npm:posix-character-classes@0.1.1",
       "regex-not": "npm:regex-not@1.0.2",
       "snapdragon": "npm:snapdragon@0.8.2",
@@ -886,18 +888,15 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:extend-shallow@2.0.1": {
-      "is-extendable": "npm:is-extendable@0.1.1"
-    },
     "npm:extend-shallow@3.0.2": {
       "assign-symbols": "npm:assign-symbols@1.0.0",
       "is-extendable": "npm:is-extendable@1.0.1"
     },
     "npm:extglob@2.0.4": {
       "array-unique": "npm:array-unique@0.3.2",
-      "define-property": "npm:define-property@1.0.0",
+      "define-property": "npm:define-property@2.0.2",
       "expand-brackets": "npm:expand-brackets@2.1.4",
-      "extend-shallow": "npm:extend-shallow@2.0.1",
+      "extend-shallow": "npm:extend-shallow@3.0.2",
       "fragment-cache": "npm:fragment-cache@0.2.1",
       "regex-not": "npm:regex-not@1.0.2",
       "snapdragon": "npm:snapdragon@0.8.2",
@@ -910,8 +909,8 @@ System.config({
       "time-stamp": "npm:time-stamp@1.1.0"
     },
     "npm:fill-range@4.0.0": {
-      "extend-shallow": "npm:extend-shallow@2.0.1",
-      "is-number": "npm:is-number@3.0.0",
+      "extend-shallow": "npm:extend-shallow@3.0.2",
+      "is-number": "npm:is-number@4.0.0",
       "repeat-string": "npm:repeat-string@1.6.1",
       "to-regex-range": "npm:to-regex-range@2.1.1",
       "util": "github:jspm/nodelibs-util@0.1.0"
@@ -924,7 +923,7 @@ System.config({
     "npm:findup-sync@2.0.0": {
       "detect-file": "npm:detect-file@1.0.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "is-glob": "npm:is-glob@3.1.0",
+      "is-glob": "npm:is-glob@4.0.0",
       "micromatch": "npm:micromatch@3.1.10",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "resolve-dir": "npm:resolve-dir@1.0.1"
@@ -1001,8 +1000,8 @@ System.config({
       "object-assign": "npm:object-assign@4.1.1",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "signal-exit": "npm:signal-exit@3.0.2",
-      "string-width": "npm:string-width@1.0.2",
-      "strip-ansi": "npm:strip-ansi@3.0.1",
+      "string-width": "npm:string-width@2.1.1",
+      "strip-ansi": "npm:strip-ansi@4.0.0",
       "util": "github:jspm/nodelibs-util@0.1.0",
       "wide-align": "npm:wide-align@1.1.3"
     },
@@ -1011,7 +1010,7 @@ System.config({
       "stream": "github:jspm/nodelibs-stream@0.1.0"
     },
     "npm:glob-parent@3.1.0": {
-      "is-glob": "npm:is-glob@3.1.0",
+      "is-glob": "npm:is-glob@4.0.0",
       "os": "github:jspm/nodelibs-os@0.1.0",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "path-dirname": "npm:path-dirname@1.0.2"
@@ -1074,7 +1073,7 @@ System.config({
       "which": "npm:which@1.3.1"
     },
     "npm:global@4.3.2": {
-      "process": "npm:process@0.5.2"
+      "process": "npm:process@0.11.10"
     },
     "npm:glogg@1.0.1": {
       "sparkles": "npm:sparkles@1.0.1",
@@ -1160,19 +1159,14 @@ System.config({
       "os": "github:jspm/nodelibs-os@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:has-value@0.3.1": {
-      "get-value": "npm:get-value@2.0.6",
-      "has-values": "npm:has-values@0.1.4",
-      "isobject": "npm:isobject@2.1.0"
-    },
     "npm:has-value@1.0.0": {
       "get-value": "npm:get-value@2.0.6",
       "has-values": "npm:has-values@1.0.0",
       "isobject": "npm:isobject@3.0.1"
     },
     "npm:has-values@1.0.0": {
-      "is-number": "npm:is-number@3.0.0",
-      "kind-of": "npm:kind-of@4.0.0"
+      "is-number": "npm:is-number@4.0.0",
+      "kind-of": "npm:kind-of@6.0.2"
     },
     "npm:hash-base@3.0.4": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.1",
@@ -1226,9 +1220,6 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "wrappy": "npm:wrappy@1.0.2"
     },
-    "npm:inherits@2.0.1": {
-      "util": "github:jspm/nodelibs-util@0.1.0"
-    },
     "npm:inherits@2.0.3": {
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
@@ -1238,9 +1229,6 @@ System.config({
     "npm:is-absolute@1.0.0": {
       "is-relative": "npm:is-relative@1.0.0",
       "is-windows": "npm:is-windows@1.0.2"
-    },
-    "npm:is-accessor-descriptor@0.1.6": {
-      "kind-of": "npm:kind-of@3.2.2"
     },
     "npm:is-accessor-descriptor@1.0.0": {
       "kind-of": "npm:kind-of@6.0.2"
@@ -1259,16 +1247,8 @@ System.config({
       "ci-info": "npm:ci-info@1.6.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:is-data-descriptor@0.1.4": {
-      "kind-of": "npm:kind-of@3.2.2"
-    },
     "npm:is-data-descriptor@1.0.0": {
       "kind-of": "npm:kind-of@6.0.2"
-    },
-    "npm:is-descriptor@0.1.6": {
-      "is-accessor-descriptor": "npm:is-accessor-descriptor@0.1.6",
-      "is-data-descriptor": "npm:is-data-descriptor@0.1.4",
-      "kind-of": "npm:kind-of@5.1.0"
     },
     "npm:is-descriptor@1.0.2": {
       "is-accessor-descriptor": "npm:is-accessor-descriptor@1.0.0",
@@ -1277,12 +1257,6 @@ System.config({
     },
     "npm:is-extendable@1.0.1": {
       "is-plain-object": "npm:is-plain-object@2.0.4"
-    },
-    "npm:is-fullwidth-code-point@1.0.0": {
-      "number-is-nan": "npm:number-is-nan@1.0.1"
-    },
-    "npm:is-glob@3.1.0": {
-      "is-extglob": "npm:is-extglob@2.1.1"
     },
     "npm:is-glob@4.0.0": {
       "is-extglob": "npm:is-extglob@2.1.1"
@@ -1293,9 +1267,6 @@ System.config({
     },
     "npm:is-npm@1.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:is-number@3.0.0": {
-      "kind-of": "npm:kind-of@3.2.2"
     },
     "npm:is-path-inside@1.0.1": {
       "path": "github:jspm/nodelibs-path@0.1.0",
@@ -1317,17 +1288,12 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:isobject@2.1.0": {
-      "isarray": "npm:isarray@1.0.0"
-    },
     "npm:json-stable-stringify@1.0.1": {
       "jsonify": "npm:jsonify@0.0.0"
     },
-    "npm:kind-of@3.2.2": {
-      "is-buffer": "npm:is-buffer@1.1.6"
-    },
-    "npm:kind-of@4.0.0": {
-      "is-buffer": "npm:is-buffer@1.1.6"
+    "npm:jwt-decode@2.2.0": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
     "npm:last-run@1.1.1": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
@@ -1368,7 +1334,7 @@ System.config({
       "graceful-fs": "npm:graceful-fs@4.1.15",
       "parse-json": "npm:parse-json@2.2.0",
       "path": "github:jspm/nodelibs-path@0.1.0",
-      "pify": "npm:pify@2.3.0",
+      "pify": "npm:pify@3.0.0",
       "pinkie-promise": "npm:pinkie-promise@2.0.1",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "strip-bom": "npm:strip-bom@2.0.0"
@@ -1379,7 +1345,7 @@ System.config({
     "npm:lru-cache@4.1.3": {
       "pseudomap": "npm:pseudomap@1.0.2",
       "util": "github:jspm/nodelibs-util@0.1.0",
-      "yallist": "npm:yallist@2.1.2"
+      "yallist": "npm:yallist@3.0.2"
     },
     "npm:make-dir@1.3.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -1461,7 +1427,7 @@ System.config({
     },
     "npm:mkdirp@0.5.1": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "minimist": "npm:minimist@0.0.8",
+      "minimist": "npm:minimist@1.2.0",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
@@ -1528,7 +1494,7 @@ System.config({
     "npm:needle@2.2.4": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.1",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
-      "debug": "npm:debug@2.6.9",
+      "debug": "npm:debug@3.2.6",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "http": "github:jspm/nodelibs-http@1.7.1",
       "https": "github:jspm/nodelibs-https@0.1.0",
@@ -1584,15 +1550,6 @@ System.config({
       "update-notifier": "npm:update-notifier@2.5.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
-    "npm:nopt@1.0.10": {
-      "abbrev": "npm:abbrev@1.1.1",
-      "assert": "github:jspm/nodelibs-assert@0.1.0",
-      "path": "github:jspm/nodelibs-path@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "stream": "github:jspm/nodelibs-stream@0.1.0",
-      "url": "github:jspm/nodelibs-url@0.1.0",
-      "util": "github:jspm/nodelibs-util@0.1.0"
-    },
     "npm:nopt@4.0.1": {
       "abbrev": "npm:abbrev@1.1.1",
       "osenv": "npm:osenv@0.1.5",
@@ -1645,8 +1602,8 @@ System.config({
     },
     "npm:object-copy@0.1.0": {
       "copy-descriptor": "npm:copy-descriptor@0.1.1",
-      "define-property": "npm:define-property@0.2.5",
-      "kind-of": "npm:kind-of@3.2.2"
+      "define-property": "npm:define-property@2.0.2",
+      "kind-of": "npm:kind-of@6.0.2"
     },
     "npm:object-visit@1.0.1": {
       "isobject": "npm:isobject@3.0.1"
@@ -1763,7 +1720,7 @@ System.config({
     },
     "npm:path-type@1.1.0": {
       "graceful-fs": "npm:graceful-fs@4.1.15",
-      "pify": "npm:pify@2.3.0",
+      "pify": "npm:pify@3.0.0",
       "pinkie-promise": "npm:pinkie-promise@2.0.1"
     },
     "npm:pause-stream@0.0.11": {
@@ -1779,17 +1736,11 @@ System.config({
       "safe-buffer": "npm:safe-buffer@5.1.2",
       "sha.js": "npm:sha.js@2.4.11"
     },
-    "npm:pify@2.3.0": {
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
     "npm:pify@3.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:pinkie-promise@2.0.1": {
       "pinkie": "npm:pinkie@2.0.4"
-    },
-    "npm:process-nextick-args@1.0.7": {
-      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:process-nextick-args@2.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
@@ -1870,16 +1821,6 @@ System.config({
       "normalize-package-data": "npm:normalize-package-data@2.4.0",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "path-type": "npm:path-type@1.1.0"
-    },
-    "npm:readable-stream@1.1.14": {
-      "buffer": "github:jspm/nodelibs-buffer@0.1.1",
-      "core-util-is": "npm:core-util-is@1.0.2",
-      "events": "github:jspm/nodelibs-events@0.1.1",
-      "inherits": "npm:inherits@2.0.3",
-      "isarray": "npm:isarray@0.0.1",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "stream-browserify": "npm:stream-browserify@1.0.0",
-      "string_decoder": "npm:string_decoder@0.10.31"
     },
     "npm:readable-stream@2.3.6": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.1",
@@ -2024,15 +1965,9 @@ System.config({
     "npm:set-blocking@2.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:set-value@0.4.3": {
-      "extend-shallow": "npm:extend-shallow@2.0.1",
-      "is-extendable": "npm:is-extendable@0.1.1",
-      "is-plain-object": "npm:is-plain-object@2.0.4",
-      "to-object-path": "npm:to-object-path@0.3.0"
-    },
     "npm:set-value@2.0.0": {
-      "extend-shallow": "npm:extend-shallow@2.0.1",
-      "is-extendable": "npm:is-extendable@0.1.1",
+      "extend-shallow": "npm:extend-shallow@3.0.2",
+      "is-extendable": "npm:is-extendable@1.0.1",
       "is-plain-object": "npm:is-plain-object@2.0.4",
       "split-string": "npm:split-string@3.1.0"
     },
@@ -2052,18 +1987,18 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:snapdragon-node@2.1.1": {
-      "define-property": "npm:define-property@1.0.0",
+      "define-property": "npm:define-property@2.0.2",
       "isobject": "npm:isobject@3.0.1",
       "snapdragon-util": "npm:snapdragon-util@3.0.1"
     },
     "npm:snapdragon-util@3.0.1": {
-      "kind-of": "npm:kind-of@3.2.2"
+      "kind-of": "npm:kind-of@6.0.2"
     },
     "npm:snapdragon@0.8.2": {
       "base": "npm:base@0.11.2",
-      "debug": "npm:debug@2.6.9",
-      "define-property": "npm:define-property@0.2.5",
-      "extend-shallow": "npm:extend-shallow@2.0.1",
+      "debug": "npm:debug@3.2.6",
+      "define-property": "npm:define-property@2.0.2",
+      "extend-shallow": "npm:extend-shallow@3.0.2",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "map-cache": "npm:map-cache@0.2.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
@@ -2109,14 +2044,14 @@ System.config({
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:static-extend@0.1.2": {
-      "define-property": "npm:define-property@0.2.5",
+      "define-property": "npm:define-property@2.0.2",
       "object-copy": "npm:object-copy@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:stream-browserify@1.0.0": {
       "events": "github:jspm/nodelibs-events@0.1.1",
       "inherits": "npm:inherits@2.0.3",
-      "readable-stream": "npm:readable-stream@1.1.14"
+      "readable-stream": "npm:readable-stream@2.3.6"
     },
     "npm:stream-combiner@0.2.2": {
       "duplexer": "npm:duplexer@0.1.1",
@@ -2130,24 +2065,13 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.1",
       "stream": "github:jspm/nodelibs-stream@0.1.0"
     },
-    "npm:string-width@1.0.2": {
-      "code-point-at": "npm:code-point-at@1.1.0",
-      "is-fullwidth-code-point": "npm:is-fullwidth-code-point@1.0.0",
-      "strip-ansi": "npm:strip-ansi@3.0.1"
-    },
     "npm:string-width@2.1.1": {
       "is-fullwidth-code-point": "npm:is-fullwidth-code-point@2.0.0",
       "strip-ansi": "npm:strip-ansi@4.0.0"
     },
-    "npm:string_decoder@0.10.31": {
-      "buffer": "github:jspm/nodelibs-buffer@0.1.1"
-    },
     "npm:string_decoder@1.1.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.1",
       "safe-buffer": "npm:safe-buffer@5.1.2"
-    },
-    "npm:strip-ansi@3.0.1": {
-      "ansi-regex": "npm:ansi-regex@2.1.1"
     },
     "npm:strip-ansi@4.0.0": {
       "ansi-regex": "npm:ansi-regex@3.0.0"
@@ -2208,10 +2132,10 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:to-object-path@0.3.0": {
-      "kind-of": "npm:kind-of@3.2.2"
+      "kind-of": "npm:kind-of@6.0.2"
     },
     "npm:to-regex-range@2.1.1": {
-      "is-number": "npm:is-number@3.0.0",
+      "is-number": "npm:is-number@4.0.0",
       "repeat-string": "npm:repeat-string@1.6.1"
     },
     "npm:to-regex@3.0.2": {
@@ -2227,11 +2151,11 @@ System.config({
       "constants": "github:jspm/nodelibs-constants@0.1.0",
       "events": "github:jspm/nodelibs-events@0.1.1",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "nopt": "npm:nopt@1.0.10",
+      "nopt": "npm:nopt@4.0.1",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:undefsafe@2.0.2": {
-      "debug": "npm:debug@2.6.9"
+      "debug": "npm:debug@3.2.6"
     },
     "npm:undertaker@1.2.0": {
       "arr-flatten": "npm:arr-flatten@1.1.0",
@@ -2251,8 +2175,8 @@ System.config({
     "npm:union-value@1.0.0": {
       "arr-union": "npm:arr-union@3.1.0",
       "get-value": "npm:get-value@2.0.6",
-      "is-extendable": "npm:is-extendable@0.1.1",
-      "set-value": "npm:set-value@0.4.3"
+      "is-extendable": "npm:is-extendable@1.0.1",
+      "set-value": "npm:set-value@2.0.0"
     },
     "npm:unique-stream@2.2.1": {
       "json-stable-stringify": "npm:json-stable-stringify@1.0.1",
@@ -2262,7 +2186,7 @@ System.config({
       "crypto-random-string": "npm:crypto-random-string@1.0.0"
     },
     "npm:unset-value@1.0.0": {
-      "has-value": "npm:has-value@0.3.1",
+      "has-value": "npm:has-value@1.0.0",
       "isobject": "npm:isobject@3.0.1"
     },
     "npm:upath@1.1.0": {
@@ -2301,7 +2225,7 @@ System.config({
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:util@0.10.3": {
-      "inherits": "npm:inherits@2.0.1",
+      "inherits": "npm:inherits@2.0.3",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:v8flags@3.1.1": {
@@ -2381,8 +2305,8 @@ System.config({
       "string-width": "npm:string-width@2.1.1"
     },
     "npm:wrap-ansi@2.1.0": {
-      "string-width": "npm:string-width@1.0.2",
-      "strip-ansi": "npm:strip-ansi@3.0.1"
+      "string-width": "npm:string-width@2.1.1",
+      "strip-ansi": "npm:strip-ansi@4.0.0"
     },
     "npm:write-file-atomic@2.3.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.1",
@@ -2403,13 +2327,13 @@ System.config({
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:yargs-parser@5.0.0": {
-      "camelcase": "npm:camelcase@3.0.0",
+      "camelcase": "npm:camelcase@4.1.0",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:yargs@7.1.0": {
-      "camelcase": "npm:camelcase@3.0.0",
+      "camelcase": "npm:camelcase@4.1.0",
       "cliui": "npm:cliui@3.2.0",
       "decamelize": "npm:decamelize@1.2.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -2421,7 +2345,7 @@ System.config({
       "require-directory": "npm:require-directory@2.1.1",
       "require-main-filename": "npm:require-main-filename@1.0.1",
       "set-blocking": "npm:set-blocking@2.0.0",
-      "string-width": "npm:string-width@1.0.2",
+      "string-width": "npm:string-width@2.1.1",
       "util": "github:jspm/nodelibs-util@0.1.0",
       "which-module": "npm:which-module@1.0.0",
       "y18n": "npm:y18n@3.2.1",

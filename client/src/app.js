@@ -1,17 +1,19 @@
 import { EventAggregator } from 'aurelia-event-aggregator';
 import { UserWebApi } from './web_api/user_api';
 import { Store } from 'aurelia-store';
-import { authenticateUser } from './actions/user';
+import { authenticateUser, loadUserProfile } from './actions/user';
 import { routerPerformedNavigation } from './actions/router';
+import AuthService from 'AuthService';
 
 export class App {
-  static inject = [UserWebApi, Store, EventAggregator];
+  static inject = [UserWebApi, Store, EventAggregator, AuthService];
   subscriptions = [];
 
-  constructor(api, store, ea) {
+  constructor(api, store, ea, auth) {
     this.api = api;
     this.store = store;
     this.ea = ea;
+    this.auth = auth;
 
     this.subscriptions.push(this.store.state.subscribe((state) => {
       this.state = state;
@@ -22,14 +24,15 @@ export class App {
   configureRouter(config, router) {
     config.title = 'iCiCle';
     config.map([
-      { route: ['', 'welcome'], name: 'welcome', moduleId: 'welcome', nav: true, title: 'Home' },
-      // { route: 'users', name: 'users', moduleId: 'users', nav: true, title: 'Github Users' },
-      // { route: 'child-router', name: 'child-router', moduleId: 'child-router', nav: true, title: 'Child Router' },
-      { route: ['registration', 'profile'], name: '', moduleId: 'registration', nav: true, title: 'Registration' },
-      { route: ['login'], name: 'login', moduleId: 'login', nav: true, title: 'Login' },
+      { route: ['', 'Home'], name: 'Home', moduleId: './page/home', nav: true, title: 'Home' },
+      { route: 'profile', name: 'Profile', moduleId: './page/profile', nav: true, title: 'Profile' },
+      { route: 'library', name: 'Library', moduleId: './page/library', nav: true, title: 'Library' },
     ]);
 
     this.router = router;
+    this.router.logout = () => {
+      this.auth.logout();
+    };
 
     // TODO: need router support for this
     let isDevToolsNavigation = false;
@@ -42,7 +45,7 @@ export class App {
       }
     }));
 
-    // setup listener for statechanges to jump to given state
+    //setup listener for statechanges to jump to given state
     this.subscriptions.push(this.store.state.subscribe((state) => {
       if (!this.router.currentInstruction) {
         return;
@@ -56,15 +59,57 @@ export class App {
     }));
   }
 
+  goBack() {
+    history.back();
+  }
+
+  goForward() {
+    history.forward();
+  }
+
   bootstrapActions() {
     this.store.registerAction(routerPerformedNavigation.name, routerPerformedNavigation);
     this.store.registerAction(authenticateUser.name, authenticateUser);
+    this.store.registerAction(loadUserProfile.name, loadUserProfile);
     // this.store.registerAction(setSelectedId.name, setSelectedId);
     // this.store.registerAction(loadContactDetails.name, loadContactDetails);
     // this.store.registerAction(saveContact.name, saveContact);
   }
 
   detached() {
-    this.subscriptions.forEach(sub => sub.unsubscribe());
+    //not working, unsubscribe is not a function !
+    //this.subscriptions.forEach(sub => sub.unsubscribe());
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import 'bootstrap';
+// import { inject } from 'aurelia-framework';
+// import AuthService from 'AuthService';
+
+// @inject(AuthService)
+// export class App {
+
+//   constructor(AuthService) {
+//   	this.auth = AuthService;
+//   }
+// }
+
+// export class ToJSONValueConverter {
+//   toView(obj) {
+//     if (obj) {
+//       return JSON.stringify(obj, null, 2)
+//     }
+//   }
+// }

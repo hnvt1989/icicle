@@ -48,13 +48,12 @@ System.register([], function (_export, _context) {
                 case 2:
                   profile = _context2.sent;
 
-                  routeConfig.navModel.setTitle(user.firstName);
                   console.log('dispatched loadUserProfile');
                   return _context2.abrupt('return', Object.assign({}, state, {
                     userProfile: profile
                   }));
 
-                case 6:
+                case 5:
                 case 'end':
                   return _context2.stop();
               }

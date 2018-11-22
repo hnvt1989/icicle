@@ -16,6 +16,7 @@ module.exports = {
     "dist/aurelia": {
       "includes": [
         "get-prop",
+        "aurelia-api",
         "aurelia-orm",
         "[aurelia-orm/**/*.js]",
         "aurelia-orm/**/*.html!text",

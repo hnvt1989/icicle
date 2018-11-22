@@ -1,7 +1,7 @@
-System.register(['bootstrap', 'config/entities', 'aurelia-validation', './state'], function (_export, _context) {
+System.register(['bootstrap', 'config/entities', 'aurelia-validation', './state', './authConig', 'AuthService'], function (_export, _context) {
   "use strict";
 
-  var entities, validateTrigger, validationController, initialState, myConfiguration;
+  var entities, validateTrigger, validationController, initialState, authConfig, AuthService, myConfiguration;
   function configure(aurelia) {
     aurelia.use.standardConfiguration().developmentLogging();
 
@@ -18,7 +18,9 @@ System.register(['bootstrap', 'config/entities', 'aurelia-validation', './state'
     aurelia.use.plugin("aurelia-store", { initialState: initialState });
 
     aurelia.start().then(function () {
-      return aurelia.setRoot();
+      var auth = aurelia.container.get(AuthService);
+      var root = auth.isAuthenticated() ? 'app' : 'login';
+      aurelia.setRoot(root);
     });
   }
 
@@ -32,6 +34,10 @@ System.register(['bootstrap', 'config/entities', 'aurelia-validation', './state'
       validationController = _aureliaValidation.validationController;
     }, function (_state) {
       initialState = _state.initialState;
+    }, function (_authConig) {
+      authConfig = _authConig.default;
+    }, function (_AuthService) {
+      AuthService = _AuthService.default;
     }],
     execute: function () {
       myConfiguration = {

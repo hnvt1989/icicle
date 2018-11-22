@@ -12,7 +12,7 @@
 
 export async function loadUserProfile(state, id, getUserProfile, routeConfig) {
   const profile = await getUserProfile(id);
-  routeConfig.navModel.setTitle(user.firstName);
+  // routeConfig.navModel.setTitle(profile.firstName);
   console.log('dispatched loadUserProfile');
   return Object.assign({}, state, {
     userProfile: profile

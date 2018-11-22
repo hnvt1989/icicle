@@ -1,1 +1,0 @@
-<template><h3>${header}</h3><br><span style="color:firebrick" if.bind="hasLoginError === true">${state.message}</span><entity-form entity.bind="login" behavior="vertical" valid.delegate="logUserIn()" invalid.delegate="checkCredentials()"><form-group slot="after" label="Remember me" element="checkbox" value.bind="rememberMe"></form-group></entity-form></template>

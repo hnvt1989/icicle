@@ -2,10 +2,8 @@ import 'bootstrap';
 import * as entities from 'config/entities';
 import { validateTrigger, validationController } from 'aurelia-validation';
 import { initialState } from './state';
-// import "@babel/polyfill";
-//import "@babel/polyfill";
-//import "@babel/register";
-//import "../node_modules/@babel/polyfill/dist/polyfill";
+import authConfig from './authConig';
+import AuthService from 'AuthService';
 
 const myConfiguration = {
   'aurelia-form': {
@@ -64,6 +62,9 @@ export function configure(aurelia) {
   //Anyone wanting to use HTMLImports to load views, will need to install the following plugin.
   //aurelia.use.plugin('aurelia-html-import-template-loader')
 
+  // aurelia
+  //   .use.plugin('aurelia-history-browser');
+
   aurelia
     .use.plugin('aurelia-config', configure => {
       return configure([
@@ -83,5 +84,29 @@ export function configure(aurelia) {
   aurelia
     .use.plugin("aurelia-store", { initialState });
 
-  aurelia.start().then(() => aurelia.setRoot());
+  // aurelia.use
+  //   /* Your other plugins and init code */
+  //   .plugin('aurelia-api', config => {
+  //     // Register an authentication hosts
+  //     config.registerEndpoint('auth');
+  //   })
+  //   /* configure aurelia-authentication */
+  //   .plugin('aurelia-authentication', baseConfig => {
+  //     baseConfig.configure(authConfig);
+  //   });
+
+  // aurelia.start().then(a => {
+  //   if (initialState.userLoggedin) {
+  //     aurelia.setRoot('app');
+  //   } else {
+  //     aurelia.setRoot('login');
+  //   }
+  // }
+  // );
+
+  aurelia.start().then(() => {
+    var auth = aurelia.container.get(AuthService);
+    let root = auth.isAuthenticated() ? 'app' : 'login';
+    aurelia.setRoot(root);
+  });
 }
