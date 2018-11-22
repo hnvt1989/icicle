@@ -43,23 +43,23 @@ export default class AuthService {
     // });
     //this.app.setRoot('app');
 
+    return this.userWebApi.authenticateUser(username, password).then((user) => {
+      if (user != null) {
+        // Save to localStorage
+        // localStorage[config.tokenName] = {};
+        localStorage[config.tokenName] = JSON.stringify(user);
 
-    this.userWebApi.authenticateUser(username, password)
-      .then((user) => {
-        //alert(user);
-        if (user != null) {
-          // Save to localStorage
-          // localStorage[config.tokenName] = {};
-          localStorage[config.tokenName] = JSON.stringify(user);
+        // alert(localStorage[config.tokenName]);
+        // .. and to the session object
+        this.session = user;
+        //alert(this.session);
+        // .. and set root to app.
+        this.app.setRoot('app');
+      }
 
-          // alert(localStorage[config.tokenName]);
-          // .. and to the session object
-          this.session = user;
-          //alert(this.session);
-          // .. and set root to app.
-          this.app.setRoot('app');
-        }
-      });
+      return user;
+    });
+
 
 
     // // Save to localStorage

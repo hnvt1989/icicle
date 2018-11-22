@@ -51,6 +51,7 @@ System.register(['aurelia-event-aggregator', './web_api/user_api', 'aurelia-stor
           config.map([{ route: ['', 'Home'], name: 'Home', moduleId: './page/home', nav: true, title: 'Home' }, { route: 'profile', name: 'Profile', moduleId: './page/profile', nav: true, title: 'Profile' }, { route: 'library', name: 'Library', moduleId: './page/library', nav: true, title: 'Library' }]);
 
           this.router = router;
+
           this.router.logout = function () {
             _this2.auth.logout();
           };

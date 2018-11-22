@@ -30,6 +30,7 @@ export class App {
     ]);
 
     this.router = router;
+    
     this.router.logout = () => {
       this.auth.logout();
     };
@@ -71,9 +72,6 @@ export class App {
     this.store.registerAction(routerPerformedNavigation.name, routerPerformedNavigation);
     this.store.registerAction(authenticateUser.name, authenticateUser);
     this.store.registerAction(loadUserProfile.name, loadUserProfile);
-    // this.store.registerAction(setSelectedId.name, setSelectedId);
-    // this.store.registerAction(loadContactDetails.name, loadContactDetails);
-    // this.store.registerAction(saveContact.name, saveContact);
   }
 
   detached() {
@@ -81,35 +79,3 @@ export class App {
     //this.subscriptions.forEach(sub => sub.unsubscribe());
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import 'bootstrap';
-// import { inject } from 'aurelia-framework';
-// import AuthService from 'AuthService';
-
-// @inject(AuthService)
-// export class App {
-
-//   constructor(AuthService) {
-//   	this.auth = AuthService;
-//   }
-// }
-
-// export class ToJSONValueConverter {
-//   toView(obj) {
-//     if (obj) {
-//       return JSON.stringify(obj, null, 2)
-//     }
-//   }
-// }

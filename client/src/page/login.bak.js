@@ -10,8 +10,6 @@ import { connectTo } from "aurelia-store";
 import { pluck } from "rxjs/operators";
 import { observable } from 'aurelia-framework';
 
-
-// @connectTo((store) => store.state.pipe(pluck("loginStatus")))
 @connectTo({
   selector: (store) => store.state.pipe(pluck('loginStatus')), // same as above
   onChanged: 'changeHandler',
@@ -43,10 +41,6 @@ export default class Login {
     this.api = api;
     this.store = store;
     // this.store.state.subscribe(state => this.state = state);
-  }
-
-  redirect() {
-    console.log('Log in Successful !');
   }
 
   // activate(params, routeConfig) {

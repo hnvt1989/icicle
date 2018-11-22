@@ -33,7 +33,9 @@ System.register(['aurelia-framework', './AuthService'], function (_export, _cont
 
           this.login = function () {
             if (_this.username && _this.password) {
-              AuthService.login(_this.username, _this.password);
+              AuthService.login(_this.username, _this.password).then(function (user) {
+                if (user == null) _this.error = 'Check credentials';
+              });
             } else {
               _this.error = 'Please enter a username and password.';
             }

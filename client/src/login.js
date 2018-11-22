@@ -21,7 +21,11 @@ export class Login {
         //   .then(() => {
         //     this.authenticated = this.authService.authenticated;
         //   });
-        AuthService.login(this.username, this.password);
+        AuthService.login(this.username, this.password).then((user) => {
+          if(user == null)
+            this.error = 'Check credentials';
+        });
+
       }
       else {
         this.error = 'Please enter a username and password.';
