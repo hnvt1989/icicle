@@ -1,7 +1,7 @@
 System.register([], function (_export, _context) {
   "use strict";
 
-  var loadUserProfile, authenticateUser;
+  var loadUserProfile, authenticateUser, saveProfile;
 
   function _asyncToGenerator(fn) {
     return function () {
@@ -47,13 +47,11 @@ System.register([], function (_export, _context) {
 
                 case 2:
                   profile = _context2.sent;
-
-                  console.log('dispatched loadUserProfile');
                   return _context2.abrupt('return', Object.assign({}, state, {
                     userProfile: profile
                   }));
 
-                case 5:
+                case 4:
                 case 'end':
                   return _context2.stop();
               }
@@ -81,11 +79,8 @@ System.register([], function (_export, _context) {
                 case 2:
                   user = _context3.sent;
 
-
-                  console.log('dispatched authenticateUser');
-
                   if (!(user !== null)) {
-                    _context3.next = 8;
+                    _context3.next = 7;
                     break;
                   }
 
@@ -98,7 +93,7 @@ System.register([], function (_export, _context) {
                     }
                   }));
 
-                case 8:
+                case 7:
                   return _context3.abrupt('return', Object.assign({}, state, {
                     loginStatus: {
                       status: 'failed',
@@ -106,7 +101,7 @@ System.register([], function (_export, _context) {
                     }
                   }));
 
-                case 9:
+                case 8:
                 case 'end':
                   return _context3.stop();
               }
@@ -120,6 +115,44 @@ System.register([], function (_export, _context) {
       }());
 
       _export('authenticateUser', authenticateUser);
+
+      _export('saveProfile', saveProfile = function () {
+        var _ref3 = _asyncToGenerator(regeneratorRuntime.mark(function _callee3(state, id, profile, saveProfile, routeConfig) {
+          var newProfile;
+          return regeneratorRuntime.wrap(function _callee3$(_context4) {
+            while (1) {
+              switch (_context4.prev = _context4.next) {
+                case 0:
+                  _context4.next = 2;
+                  return saveProfile(id, profile);
+
+                case 2:
+                  newProfile = _context4.sent;
+
+                  if (!(newProfile !== null)) {
+                    _context4.next = 6;
+                    break;
+                  }
+
+                  alert('Saved !');
+                  return _context4.abrupt('return', Object.assign({}, state, {
+                    userProfile: newProfile
+                  }));
+
+                case 6:
+                case 'end':
+                  return _context4.stop();
+              }
+            }
+          }, _callee3, this);
+        }));
+
+        return function saveProfile(_x10, _x11, _x12, _x13, _x14) {
+          return _ref3.apply(this, arguments);
+        };
+      }());
+
+      _export('saveProfile', saveProfile);
     }
   };
 });

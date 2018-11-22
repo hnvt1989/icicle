@@ -95,7 +95,7 @@
       "bluebird": "npm:bluebird@3.4.1",
       "bootstrap": "github:twbs/bootstrap@^3.3.6",
       "fetch": "github:github/fetch@^1.0.0",
-      "font-awesome": "npm:font-awesome@4.6.3",
+      "font-awesome": "npm:font-awesome@^4.7.0",
       "get-prop": "npm:get-prop@^0.0.10",
       "global": "npm:global@^4.3.2",
       "gulp-nodemon": "npm:gulp-nodemon@^2.4.1",

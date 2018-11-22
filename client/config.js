@@ -41,7 +41,7 @@ System.config({
     "bluebird": "npm:bluebird@3.4.1",
     "bootstrap": "github:twbs/bootstrap@3.3.7",
     "fetch": "github:github/fetch@1.0.0",
-    "font-awesome": "npm:font-awesome@4.6.3",
+    "font-awesome": "npm:font-awesome@4.7.0",
     "get-prop": "npm:get-prop@0.0.10",
     "global": "npm:global@4.3.2",
     "gulp-nodemon": "npm:gulp-nodemon@2.4.1",
@@ -952,8 +952,8 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "readable-stream": "npm:readable-stream@2.3.6"
     },
-    "npm:font-awesome@4.6.3": {
-      "css": "github:systemjs/plugin-css@0.1.31"
+    "npm:font-awesome@4.7.0": {
+      "css": "github:systemjs/plugin-css@0.1.37"
     },
     "npm:for-own@1.0.0": {
       "for-in": "npm:for-in@1.0.2"

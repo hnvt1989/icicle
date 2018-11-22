@@ -1,10 +1,10 @@
-import { LoginEntity } from "../entities/login";
-import { UserService } from '../services/user';
+import { LoginEntity } from "../../entities/login";
+import { UserService } from '../../services/user';
 import { EventAggregator } from 'aurelia-event-aggregator';
-import Home from './home';
-import { UserWebApi } from '../web_api/user_api';
+import Home from '../home';
+import { UserWebApi } from '../../web_api/user_api';
 import { Store } from 'aurelia-store';
-import { authenticateUser } from '../actions/user';
+import { authenticateUser } from '../../actions/user';
 import { bindable } from 'aurelia-framework';
 import { connectTo } from "aurelia-store";
 import { pluck } from "rxjs/operators";

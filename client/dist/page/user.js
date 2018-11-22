@@ -42,10 +42,6 @@ System.register(["../entities/user"], function (_export, _context) {
           this.user = new UserEntity();
         }
 
-        User.prototype.register = function register() {
-          alert("user info: " + this.user.email);
-        };
-
         _createClass(User, [{
           key: "fullName",
           get: function get() {

@@ -1,5 +1,5 @@
 let latency = 200;
-let id = 0;
+let id = 1000;
 
 function getId() {
   return ++id;
@@ -8,43 +8,42 @@ function getId() {
 let contacts = [
   {
     id: getId(),
-    firstName: 'Joe',
-    lastName: 'Biden',
     email: 'joe@test.com',
     password: 'test1234',
-    phoneNumber: '867-5309'
+    profile: {
+      firstName: 'Joe',
+      lastName: 'Biden',
+      phoneNumber: '867-5309',
+      city: 'Portland',
+      state: 'OR',
+      memberSince: 'November 22th, 2018'
+    }
   },
   {
     id: getId(),
-    firstName: 'Clive',
-    lastName: 'Lewis',
     email: 'lewis@inklings.com',
     password: 'test1234',
-    phoneNumber: '867-5309'
+    profile: {
+      firstName: 'Clive',
+      lastName: 'Lewis',
+      phoneNumber: '867-5309',
+      city: 'Denver',
+      state: 'CO',
+      memberSince: 'November 22th, 2018'
+    }
   },
   {
     id: getId(),
-    firstName: 'Owen',
-    lastName: 'Barfield',
     email: 'barfield@inklings.com',
     password: 'test1234',
-    phoneNumber: '867-5309'
-  },
-  {
-    id: getId(),
-    firstName: 'Charles',
-    lastName: 'Williams',
-    email: 'williams@inklings.com',
-    password: 'test1234',
-    phoneNumber: '867-5309'
-  },
-  {
-    id: getId(),
-    firstName: 'Roger',
-    lastName: 'Green',
-    email: 'green@inklings.com',
-    password: 'test1234',
-    phoneNumber: '867-5309'
+    profile: {
+      firstName: 'Owen',
+      lastName: 'Barfield',
+      phoneNumber: '867-5309',
+      city: 'Denver',
+      state: 'CO',
+      memberSince: 'November 22th, 2018'
+    }
   }
 ];
 
@@ -101,12 +100,30 @@ export class UserWebApi {
     });
   }
 
+  saveProfile(id, profile) {
+    this.isRequesting = true;
+    return new Promise(resolve => {
+      setTimeout(() => {
+        let instance = JSON.parse(JSON.stringify(profile));
+        let found = contacts.filter(x => x.id == id)[0];
+
+        if (found) {
+          let index = contacts.indexOf(found);
+          contacts[index].profile = instance;
+        }
+
+        this.isRequesting = false;
+        resolve(instance);
+      }, latency);
+    });
+  }
+
   authenticateUser(email, password) {
     this.isRequesting = true;
     return new Promise(resolve => {
       setTimeout(() => {
         let found = contacts.filter(x => x.email == email && x.password == password)[0];
-        if(found)
+        if (found)
           resolve(JSON.parse(JSON.stringify(found)));
         else
           resolve(null);
@@ -121,7 +138,7 @@ export class UserWebApi {
     return new Promise(resolve => {
       setTimeout(() => {
         let found = contacts.filter(x => x.id == id)[0];
-        resolve(JSON.parse(JSON.stringify(found)));
+        resolve(JSON.parse(JSON.stringify(found)).profile);
         this.isRequesting = false;
       }, latency);
     });

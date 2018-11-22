@@ -1,7 +1,7 @@
 System.register(['aurelia-event-aggregator', './web_api/user_api', 'aurelia-store', './actions/user', './actions/router', 'AuthService'], function (_export, _context) {
   "use strict";
 
-  var EventAggregator, UserWebApi, Store, authenticateUser, loadUserProfile, routerPerformedNavigation, AuthService, _class, _temp, App;
+  var EventAggregator, UserWebApi, Store, authenticateUser, loadUserProfile, saveProfile, routerPerformedNavigation, AuthService, _class, _temp, App;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -19,6 +19,7 @@ System.register(['aurelia-event-aggregator', './web_api/user_api', 'aurelia-stor
     }, function (_actionsUser) {
       authenticateUser = _actionsUser.authenticateUser;
       loadUserProfile = _actionsUser.loadUserProfile;
+      saveProfile = _actionsUser.saveProfile;
     }, function (_actionsRouter) {
       routerPerformedNavigation = _actionsRouter.routerPerformedNavigation;
     }, function (_AuthService) {
@@ -47,8 +48,8 @@ System.register(['aurelia-event-aggregator', './web_api/user_api', 'aurelia-stor
         App.prototype.configureRouter = function configureRouter(config, router) {
           var _this2 = this;
 
-          config.title = 'iCiCle';
-          config.map([{ route: ['', 'Home'], name: 'Home', moduleId: './page/home', nav: true, title: 'Home' }, { route: 'profile', name: 'Profile', moduleId: './page/profile', nav: true, title: 'Profile' }, { route: 'library', name: 'Library', moduleId: './page/library', nav: true, title: 'Library' }]);
+          config.title = 'icicle';
+          config.map([{ route: '', redirect: 'Home' }, { route: 'Home', name: 'Home', moduleId: './page/home', nav: 0, title: 'Home' }, { route: 'Profile', name: 'Profile', moduleId: './page/profile', nav: 1, title: 'Profile' }, { route: 'Library', name: 'Library', moduleId: './page/library', nav: 2, title: 'Library' }]);
 
           this.router = router;
 
@@ -90,6 +91,7 @@ System.register(['aurelia-event-aggregator', './web_api/user_api', 'aurelia-stor
           this.store.registerAction(routerPerformedNavigation.name, routerPerformedNavigation);
           this.store.registerAction(authenticateUser.name, authenticateUser);
           this.store.registerAction(loadUserProfile.name, loadUserProfile);
+          this.store.registerAction(saveProfile.name, saveProfile);
         };
 
         App.prototype.detached = function detached() {};

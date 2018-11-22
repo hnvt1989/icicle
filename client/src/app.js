@@ -1,7 +1,7 @@
 import { EventAggregator } from 'aurelia-event-aggregator';
 import { UserWebApi } from './web_api/user_api';
 import { Store } from 'aurelia-store';
-import { authenticateUser, loadUserProfile } from './actions/user';
+import { authenticateUser, loadUserProfile , saveProfile} from './actions/user';
 import { routerPerformedNavigation } from './actions/router';
 import AuthService from 'AuthService';
 
@@ -22,11 +22,12 @@ export class App {
   }
 
   configureRouter(config, router) {
-    config.title = 'iCiCle';
+    config.title = 'icicle';
     config.map([
-      { route: ['', 'Home'], name: 'Home', moduleId: './page/home', nav: true, title: 'Home' },
-      { route: 'profile', name: 'Profile', moduleId: './page/profile', nav: true, title: 'Profile' },
-      { route: 'library', name: 'Library', moduleId: './page/library', nav: true, title: 'Library' },
+      { route: '', redirect: 'Home' },
+      { route: 'Home', name: 'Home', moduleId: './page/home', nav: 0, title: 'Home' },
+      { route: 'Profile', name: 'Profile', moduleId: './page/profile', nav: 1, title: 'Profile' },
+      { route: 'Library', name: 'Library', moduleId: './page/library', nav: 2, title: 'Library' },
     ]);
 
     this.router = router;
@@ -72,6 +73,7 @@ export class App {
     this.store.registerAction(routerPerformedNavigation.name, routerPerformedNavigation);
     this.store.registerAction(authenticateUser.name, authenticateUser);
     this.store.registerAction(loadUserProfile.name, loadUserProfile);
+    this.store.registerAction(saveProfile.name, saveProfile);
   }
 
   detached() {

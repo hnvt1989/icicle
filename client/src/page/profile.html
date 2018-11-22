@@ -1,7 +1,8 @@
 <template>
   <section class="au-animate">
-    <div>
-      <h4>${header} <span style="color:crimson">${state.firstName} ${state.lastName}</span></h4>
-    </div>
+    <h3>${header}</h3>
+    <br />
+    <entity-form entity.bind="profile" behavior="vertical" valid.delegate="save()" invalid.delegate="console.log('hello')">
+    </entity-form>
   </section>
 </template>

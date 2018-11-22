@@ -23,19 +23,15 @@ export default class Home {
     this.api = api;
     this.store = store;
     this.session = JSON.parse(localStorage[config.tokenName] || null);
-    
-    if(this.session){
+
+    if (this.session) {
       this.loggedInUserId = this.session.id;
     }
   }
 
   activate(params, routeConfig) {
     this.routeConfig = routeConfig;
-
-    // if (this.state) {
-    //   console.log(this.state.currentLoggedInUser);
-      return this.store.dispatch(loadUserProfile, this.loggedInUserId, this.api.getUserProfile.bind(this.api), routeConfig);
-    //}
     // return this.store.dispatch(loadContactDetails, params.id, this.api.getContactDetails.bind(this.api), routeConfig);
+    return this.store.dispatch(loadUserProfile, this.loggedInUserId, this.api.getUserProfile.bind(this.api), routeConfig);
   }
 }
