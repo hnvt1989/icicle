@@ -24,7 +24,6 @@ export class App {
   configureRouter(config, router) {
     config.title = 'icicle';
     config.map([
-      { route: '', redirect: 'Home' },
       { route: 'Home', name: 'Home', moduleId: './page/home', nav: 0, title: 'Home' },
       { route: 'Profile', name: 'Profile', moduleId: './page/profile', nav: 1, title: 'Profile' },
       { route: 'Library', name: 'Library', moduleId: './page/library', nav: 2, title: 'Library' },
