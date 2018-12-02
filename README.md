@@ -1,5 +1,5 @@
 # icicle
-# DEMO: http://ec2-18-237-112-208.us-west-2.compute.amazonaws.com:9000
+## DEMO: http://ec2-18-237-112-208.us-west-2.compute.amazonaws.com:9000
 
 
 ## Running The App
