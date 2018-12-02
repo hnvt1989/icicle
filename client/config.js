@@ -40,6 +40,7 @@ System.config({
     "aurelia-view-manager": "npm:aurelia-view-manager@0.1.1",
     "bluebird": "npm:bluebird@3.4.1",
     "bootstrap": "github:twbs/bootstrap@3.3.7",
+    "event-stream": "npm:event-stream@4.0.1",
     "fetch": "github:github/fetch@1.0.0",
     "font-awesome": "npm:font-awesome@4.7.0",
     "get-prop": "npm:get-prop@0.0.10",
@@ -843,10 +844,9 @@ System.config({
       "es6-iterator": "npm:es6-iterator@2.0.3",
       "es6-symbol": "npm:es6-symbol@3.1.1"
     },
-    "npm:event-stream@3.3.6": {
+    "npm:event-stream@4.0.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.1",
       "duplexer": "npm:duplexer@0.1.1",
-      "flatmap-stream": "npm:flatmap-stream@0.1.1",
       "from": "npm:from@0.1.7",
       "map-stream": "npm:map-stream@0.0.7",
       "pause-stream": "npm:pause-stream@0.0.11",
@@ -940,11 +940,6 @@ System.config({
     "npm:flagged-respawn@1.0.0": {
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:flatmap-stream@0.1.1": {
-      "buffer": "github:jspm/nodelibs-buffer@0.1.1",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "stream": "github:jspm/nodelibs-stream@0.1.0"
     },
     "npm:flush-write-stream@1.0.3": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.1",
@@ -1135,7 +1130,7 @@ System.config({
     "npm:gulp-nodemon@2.4.1": {
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",
       "colors": "npm:colors@1.3.2",
-      "event-stream": "npm:event-stream@3.3.6",
+      "event-stream": "npm:event-stream@4.0.1",
       "gulp": "npm:gulp@4.0.0",
       "http": "github:jspm/nodelibs-http@1.7.1",
       "nodemon": "npm:nodemon@1.18.6",
@@ -1219,6 +1214,9 @@ System.config({
       "once": "npm:once@1.4.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "wrappy": "npm:wrappy@1.0.2"
+    },
+    "npm:inherits@2.0.1": {
+      "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:inherits@2.0.3": {
       "util": "github:jspm/nodelibs-util@0.1.0"
@@ -1752,7 +1750,7 @@ System.config({
     },
     "npm:ps-tree@1.1.0": {
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",
-      "event-stream": "npm:event-stream@3.3.6",
+      "event-stream": "npm:event-stream@4.0.1",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:pseudomap@1.0.2": {
@@ -2225,7 +2223,7 @@ System.config({
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:util@0.10.3": {
-      "inherits": "npm:inherits@2.0.3",
+      "inherits": "npm:inherits@2.0.1",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:v8flags@3.1.1": {

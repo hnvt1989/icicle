@@ -94,6 +94,7 @@
       "aurelia-view-manager": "npm:aurelia-view-manager@^0.1.1",
       "bluebird": "npm:bluebird@3.4.1",
       "bootstrap": "github:twbs/bootstrap@^3.3.6",
+      "event-stream": "npm:event-stream@^4.0.1",
       "fetch": "github:github/fetch@^1.0.0",
       "font-awesome": "npm:font-awesome@^4.7.0",
       "get-prop": "npm:get-prop@^0.0.10",
@@ -102,6 +103,7 @@
       "jquery": "npm:jquery@^2.2.4",
       "mongodb": "npm:mongodb@^3.1.9",
       "mongoose": "github:gavinaiken/mongoose-browser@^4.5.3",
+      "rxjs": "npm:rxjs@^6.3.3",
       "text": "github:systemjs/plugin-text@^0.0.8"
     },
     "devDependencies": {
