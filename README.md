@@ -1,7 +1,8 @@
 # icicle
+# DEMO: http://ec2-18-237-112-208.us-west-2.compute.amazonaws.com:9000
+
 
 ## Running The App
-
 To run the app, follow these steps.
 
 1. Ensure that [NodeJS](http://nodejs.org/) is installed. This provides the platform on which the build tooling runs.
